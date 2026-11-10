@@ -1,0 +1,13 @@
+{
+  "name": "rally-monorepo",
+  "version": "2.0.0",
+  "private": true,
+  "workspaces": ["apps/desktop"],
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/start-rally.ps1",
+    "dev:desktop": "npm --prefix apps/desktop run dev:vite",
+    "dev:electron": "npm --prefix apps/desktop run dev:electron",
+    "build:desktop": "npm --prefix apps/desktop run build",
+    "test:backend": "cd services/orchestrator && .venv\\Scripts\\pytest -v"
+  }
+}
